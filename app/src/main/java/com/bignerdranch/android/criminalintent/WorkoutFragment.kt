@@ -80,6 +80,8 @@ class WorkoutFragment : Fragment(), DatePickerFragment.Callbacks {
         val appCompatActivity = activity as AppCompatActivity
         appCompatActivity.supportActionBar?.setTitle(R.string.new_workout)
 
+
+
     }
 
     override fun onStart() {
@@ -219,6 +221,11 @@ class WorkoutFragment : Fragment(), DatePickerFragment.Callbacks {
         groupCheckBox.isChecked = workout.isGrouped
         startTimeButton.text = workout.startTime
         endTimeButton.text = workout.endTime
+        if (workout.title != "") {
+            val appCompatActivity = activity as AppCompatActivity
+            appCompatActivity.supportActionBar?.setTitle(workout.title)
+        }
+
     }
 
     companion object {
