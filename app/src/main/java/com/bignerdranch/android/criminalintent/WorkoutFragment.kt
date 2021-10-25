@@ -79,6 +79,7 @@ class WorkoutFragment : Fragment(), DatePickerFragment.Callbacks {
 
         val appCompatActivity = activity as AppCompatActivity
         appCompatActivity.supportActionBar?.setTitle(R.string.new_workout)
+
     }
 
     override fun onStart() {
