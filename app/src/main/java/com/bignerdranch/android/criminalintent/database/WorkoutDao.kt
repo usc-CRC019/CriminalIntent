@@ -9,10 +9,10 @@ import java.util.*
 interface WorkoutDao {
 
     @Query("SELECT * FROM workout")
-    fun getWorkout(): LiveData<List<Workout>>
+    fun getWorkouts(): LiveData<List<Workout>>
 
     @Query("SELECT * FROM workout WHERE id=(:id)")
-    fun getWorkout(id: UUID): LiveData<Workout?>
+    fun getWorkouts(id: UUID): LiveData<Workout?>
 
     @Update
     fun updateWorkout(workout: Workout)

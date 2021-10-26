@@ -19,9 +19,9 @@ class WorkoutRepository private constructor(context: Context) {
     private val workoutDao = database.workoutDao()
     private val executor = Executors.newSingleThreadExecutor()
 
-    fun getWorkouts(): LiveData<List<Workout>> = workoutDao.getWorkout()
+    fun getWorkouts(): LiveData<List<Workout>> = workoutDao.getWorkouts()
 
-    fun getWorkout(id: UUID): LiveData<Workout?> = workoutDao.getWorkout(id)
+    fun getWorkout(id: UUID): LiveData<Workout?> = workoutDao.getWorkouts(id)
 
     fun updateWorkout(workout: Workout) {
         executor.execute {
